@@ -1,33 +1,17 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-
-const {
-  APIKEY,
-  AUTHDOMAIN,
-  PROJECTID,
-  STORAGEBUCKET,
-  MESSAGINGSENDERID,
-  APPID,
-} = process.env;
-
-console.log(
-  APIKEY,
-  AUTHDOMAIN,
-  PROJECTID,
-  STORAGEBUCKET,
-  MESSAGINGSENDERID,
-  APPID
-);
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: APIKEY,
-  authDomain: AUTHDOMAIN,
-  projectId: PROJECTID,
-  storageBucket: STORAGEBUCKET,
-  messagingSenderId: MESSAGINGSENDERID,
-  appId: APPID,
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID,
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
-export { db };
+export { db, auth };
