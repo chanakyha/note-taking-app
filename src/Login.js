@@ -7,7 +7,6 @@ const Login = () => {
       <div className="card w-96 bg-neutral text-neutral-content">
         <div className="card-body items-center text-center">
           <h2 className="card-title">Login with Google to Continue!</h2>
-
           <div className="card-actions justify-end">
             <button className="btn btn-primary flex items-center space-x-2">
               <GrGoogle />
